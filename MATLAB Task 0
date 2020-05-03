@@ -1,0 +1,40 @@
+%BMI = mass / height^2  =  (kg/m^2) in SI units
+disp('Hello, this is the BMI calculator.')
+disp(' ')
+Weight = input('Enter your weight (lbs), or type 0 for SI units: ');
+if Weight == 0;
+    Weight = input('Enter your mass (kg): ')
+    Height = input('Enter your height (m): ')
+    BMI = (Weight / (Height^2)) %kg/m^2
+else
+    Height = input('Enter your height (ft): ')
+    %Conversion to SI units
+    BMI = (Weight / (Height^2)) * 4.882427111 %kg/m^2
+end
+if (BMI < 16.5);
+    disp('You are severly underweight')
+else if ((BMI > 16.5) && (BMI <= 18.5));
+        disp('You are underweight')
+    else if ((BMI > 18.5) && (BMI <= 25));
+            disp('You are normal')
+        else if ((BMI > 25) && (BMI <= 30));
+                disp('You are overweight')
+            else if ((BMI > 30) && (BMI <= 35));
+                    disp('You are classified as obese Class I')
+                else if ((BMI > 35) && (BMI <= 40));
+                        disp('You are classified as obese Class II')
+                    else if (BMI > 40);
+                            disp('You are classified as obese Class III')
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+disp(' ')
+disp('Posssible BMI ranges: < 16.5 severe underweight, 16.5-18.5 underweight, 18.5-25 normal, 25-30 overweight, > 30 obese')
+% The possible BMI categories are as follows: a BMI of less than 16.5
+% indicates severe underweight, 16.5 to 18.5 is underweight, 18.5 to 25
+% is normal, 25 to 30 is overweight. The Obese category range from 30-35
+% (class I), 35-40 (class II), and over 40 is class III.
